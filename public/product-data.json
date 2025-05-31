@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "Iphone 12 Pro",
-    "price": "1499.99",
+    "price": "$1499.99",
     "color": "Space Gray",
     "ram": "8gb",
     "storage": "256gb",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Iphone 12 Pro Max",
-    "price": "1999.99",
+    "price": "$1999.99",
     "color": "Gold",
     "ram": "8gb",
     "storage": "256gb",
