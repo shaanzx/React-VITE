@@ -6,7 +6,7 @@ export function Navbar() {
         <div className="flex justify-between items-center p-4 mt-2 bg-white/5 shadow-lg backdrop-blur-md rounded-xl h-16 w-full text-black">
             <div className="flex items-center gap-2">
                 <img src={logo} alt="logo" className="w-12 h-12" />
-                <h2 className="text-2xl font-bold  tracking-wide font-impact">
+                <h2 className="text-2xl font-bold tracking-wide font-impact">
                     ShanZ Mobile
                 </h2>
             </div>
