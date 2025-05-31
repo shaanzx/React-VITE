@@ -2,8 +2,18 @@
 import {useEffect, useState} from "react";
 import {Product} from "../../common/product/Product.tsx";
 
+type ProductData = {
+    id: number;
+    name: string;
+    price: number;
+    color: string;
+    ram: string;
+    storage: string;
+    image: string;
+}
+
 export const Home = () => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<ProductData[]>([]);
 
     useEffect(() =>{
         const fetchData = async () =>{
@@ -12,7 +22,6 @@ export const Home = () => {
                 const jsonData = await response.json();
                 // console.log(jsonData);
                 setProducts(jsonData);
-                console.log(products);
             }catch (error){
                 console.error('Error fetching data: ', error);
             }
@@ -52,7 +61,7 @@ export const Home = () => {
                 </div>*/}
                 {
                     products.map((product) => (
-                        <Product data={product}/>
+                        <Product key={product.id} data={product}/>
                     ))
                 }
 
