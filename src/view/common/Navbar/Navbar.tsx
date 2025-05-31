@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import logo from "../../../assets/logo.jpg";
+import logo from "../../../assets/react.svg";
 
 export function Navbar() {
     return (
-        <div className="flex justify-between items-center p-4 mt-2 bg-white/5 shadow-lg backdrop-blur-md rounded-xl h-16 w-[calc(100%-42px)] text-black">
+        <div className="flex justify-between items-center p-4 mt-2 bg-white/5 shadow-lg backdrop-blur-md rounded-xl h-16 w-full text-black">
             <div className="flex items-center gap-2">
                 <img src={logo} alt="logo" className="w-12 h-12" />
-                <h2 className="text-xl font-bold">SJ.</h2>
+                <h2 className="text-xl font-bold">React</h2>
             </div>
             <div className="flex items-center gap-5">
                 <ul className="flex items-center gap-5 list-none">
@@ -43,7 +43,7 @@ export function Navbar() {
                         </Link>
                     </li>
                 </ul>
-                <button className="bg-black text-white rounded-md px-4 py-1 hover:bg-[#745270] transition">
+                <button className="bg-gradient-to-r from-black to-[#745270] hover:from-[#745270] hover:to-black text-white rounded-md px-4 py-1  transition">
                     <Link to="/login" className="text-white no-underline">
                         Sign In
                     </Link>

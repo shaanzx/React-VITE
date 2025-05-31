@@ -27,7 +27,7 @@ export const Login = () => {
 
                 <button
                     type="submit"
-                    className="bg-black hover:bg-green-500 text-white py-3 rounded-lg text-base font-semibold transition-colors"
+                    className="bg-gradient-to-r from-black to-[#745270] hover:from-[#745270] hover:to-black transition text-white py-3 rounded-lg text-base font-semibold transition-colors"
                 >
                     Login
                 </button>

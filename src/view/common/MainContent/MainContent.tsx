@@ -6,7 +6,7 @@ import { Services } from "../../pages/Services/Services.tsx";
 
 export function MainContent() {
     return (
-        <div className="flex flex-col w-[calc(100%-20px)] h-[70vh] overflow-y-auto p-2 bg-white text-black">
+        <div className="flex flex-col w-[calc(100%-20px)] h-[84vh] overflow-y-auto p-2 bg-white text-black">
             <Routes>
                 <Route path="/" index element={<Home />} />
                 <Route path="/About" element={<About />} />

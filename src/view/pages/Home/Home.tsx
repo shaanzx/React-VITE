@@ -1,45 +1,108 @@
+import basicVersion from "../../../assets/products/IPhone12.jpg";
+import proVersion from "../../../assets/products/12pro.jpg";
+import proMaxVersion from "../../../assets/products/iphone-12-pro-max-gold.jpg";
+import {useEffect, useState} from "react";
+
 export const Home = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() =>{
+        const fetchData = async () =>{
+            try{
+                const response = await fetch('./product-data.json')
+                const jsonData = await response.json();
+                // console.log(jsonData);
+                setProducts(jsonData);
+                console.log(products);
+            }catch (error){
+                console.error('Error fetching data: ', error);
+            }
+        }
+        fetchData();
+    },[]);
+
     return (
-        <div className="flex h-screen bg-slate-50 font-sans">
-
-            {/* Sidebar (optional - can be added later if needed) */}
-
-            {/* Main Content Area */}
-            <div className="flex flex-col flex-1">
-                {/* Topbar */}
-                <header className="flex justify-between items-center px-6 py-4 bg-white shadow">
-                    <input
-                        type="text"
-                        placeholder="Search..."
-                        className="px-4 py-2 w-64 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    />
-                    <div className="font-semibold text-gray-800">
-                        👤 Admin
+        <div>
+            <div className="flex flex-wrap h-screen ml-[1px] mt-5 mb-5 justify-center items-center mx-auto gap-15">
+                <div
+                    className="w-72 h-[420px] p-4 bg-white shadow-md rounded-xl text-black flex flex-col justify-between items-center hover:scale-105 transition-all duration-500 ease-in-out">
+                    <div>
+                        <img src={basicVersion} alt="logo" className="w-[128px] h-[128px]"/>
                     </div>
-                </header>
-
-                {/* Dashboard Content */}
-                <section className="p-8">
-                    <h1 className="text-2xl font-bold text-gray-800 mb-6">
-                        Welcome to the Dashboard
-                    </h1>
-
-                    <div className="flex gap-6 flex-wrap">
-                        <div className="bg-white shadow-md rounded-xl p-6 flex-1 min-w-[200px]">
-                            <h3 className="text-gray-500 mb-2">Total Users</h3>
-                            <p className="text-2xl font-bold text-gray-800">1,240</p>
-                        </div>
-                        <div className="bg-white shadow-md rounded-xl p-6 flex-1 min-w-[200px]">
-                            <h3 className="text-gray-500 mb-2">Revenue</h3>
-                            <p className="text-2xl font-bold text-gray-800">$13,420</p>
-                        </div>
-                        <div className="bg-white shadow-md rounded-xl p-6 flex-1 min-w-[200px]">
-                            <h3 className="text-gray-500 mb-2">New Orders</h3>
-                            <p className="text-2xl font-bold text-gray-800">320</p>
-                        </div>
+                    <div>
+                        <h2 className="text-2xl font-bold ">Apple 12</h2>
                     </div>
-                </section>
+                    <div className="text-center">
+                        <p className="text-1xl ">
+                            $1,999.99
+                        </p>
+                        <p>
+                            color: Light Blue<br/>
+                            ram: 8gb<br/>
+                            storage: 256gb<br/>
+                        </p>
+                    </div>
+                    <div className="flex justify-center items-center">
+                        <button
+                            className="w-fit h-fit bg-gradient-to-r from-black to-[#1e3799] hover:from-[#1e3799] hover:to-black transition text-white p-2 rounded-lg text-base font-semibold transition-colors">
+                            Add To Cart 🛒
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    className="w-72 h-[420px] p-4 bg-white shadow-md rounded-xl text-black flex flex-col justify-between items-center hover:scale-105 transition-all duration-500 ease-in-out">
+                    <div>
+                        <img src={proVersion} alt="logo" className="w-[128px] h-[128px]"/>
+                    </div>
+                    <div>
+                        <h2 className="text-2xl font-bold ">Apple 12 Pro</h2>
+                    </div>
+                    <div className="text-center">
+                        <p className="text-1xl ">
+                            $1,499.99
+                        </p>
+                        <p>
+                            color: blue<br/>
+                            ram: 8gb<br/>
+                            storage: 256gb<br/>
+                        </p>
+                    </div>
+                    <div className="flex justify-center items-center">
+                        <button
+                            className="w-fit h-fit bg-gradient-to-r from-black to-[#1e3799] hover:from-[#1e3799] hover:to-black transition text-white p-2 rounded-lg text-base font-semibold transition-colors">
+                            Add To Cart 🛒
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    className="w-72 h-[420px] p-4 bg-white shadow-md rounded-xl text-black flex flex-col justify-between items-center hover:scale-105 transition-all duration-500 ease-in-out">
+                    <div>
+                        <img src={proMaxVersion} alt="logo" className="w-[128px] h-[128px]"/>
+                    </div>
+                    <div>
+                        <h2 className="text-2xl font-bold ">Apple 12 Pro MAX</h2>
+                    </div>
+                    <div className="text-center">
+                        <p className="text-1xl ">
+                            $1,999.99
+                        </p>
+                        <p>
+                            color: Gold<br/>
+                            ram: 8gb<br/>
+                            storage: 512gb<br/>
+                        </p>
+                    </div>
+                    <div className="flex justify-center items-center">
+                        <button
+                            className="w-fit h-fit bg-gradient-to-r from-black to-[#1e3799] hover:from-[#1e3799] hover:to-black transition text-white p-2 rounded-lg text-base font-semibold transition-colors">
+                            Add To Cart 🛒
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
+
     );
 };
