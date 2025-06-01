@@ -65,7 +65,6 @@ export const Home = () => {
                     ))
                 }
 
-
                 {/*<div
                     className="w-72 h-[420px] p-4 bg-white shadow-md rounded-xl text-black flex flex-col justify-between items-center hover:scale-105 transition-all duration-500 ease-in-out">
                     <div>
